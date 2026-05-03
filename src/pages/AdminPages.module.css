@@ -1,0 +1,738 @@
+.pageContainer {
+  background-color: var(--color-bg, #111827);
+  color: var(--color-text, #f9fafb);
+  padding: 2rem;
+  min-height: calc(100vh - 60px);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.pageTitle {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text, #f9fafb);
+}
+
+.pageSubtitle {
+  margin: 0 0 2rem 0;
+  font-size: 1rem;
+  color: var(--color-text-muted, #9ca3af);
+}
+
+/* Stats Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background-color: var(--color-surface, #1f2937);
+  border: 1px solid var(--color-border, #374151);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: var(--color-text-muted, #9ca3af);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.statValue {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-primary, #60a5fa);
+  margin-bottom: 0.5rem;
+}
+
+.statChange {
+  font-size: 0.85rem;
+  color: #10b981;
+}
+
+/* Recent Activity Section */
+.recentActivitySection {
+  background-color: var(--color-surface, #1f2937);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--color-border, #374151);
+  margin-bottom: 2rem;
+}
+
+.recentActivitySection h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--color-text, #f9fafb);
+}
+
+.activityTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.activityTable thead {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid var(--color-border, #374151);
+}
+
+.activityTable th {
+  text-align: left;
+  padding: 1rem;
+  color: var(--color-text, #f9fafb);
+  font-weight: 600;
+}
+
+.activityTable td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-border, #374151);
+  color: var(--color-text-muted, #9ca3af);
+}
+
+.activityTable tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Filter Bar */
+.filterBar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filterSelect,
+.searchInput,
+.filterInput {
+  padding: 0.75rem;
+  border: 1px solid var(--color-border, #374151);
+  border-radius: 6px;
+  background-color: var(--color-surface, #111827);
+  color: var(--color-text, #f9fafb);
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+}
+
+.filterSelect:focus,
+.searchInput:focus,
+.filterInput:focus {
+  outline: none;
+  border-color: var(--color-primary, #60a5fa);
+}
+
+.searchInput {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Users Table */
+.usersTable {
+  background-color: var(--color-surface, #1f2937);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  overflow-x: auto;
+  border: 1px solid var(--color-border, #374151);
+  margin-bottom: 2rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid var(--color-border, #374151);
+}
+
+.table th {
+  text-align: left;
+  padding: 1rem;
+  color: var(--color-text, #f9fafb);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-border, #374151);
+  color: var(--color-text-muted, #9ca3af);
+}
+
+.table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.roleBadge,
+.statusBadge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.roleBadge.admin {
+  background-color: rgba(217, 119, 6, 0.3);
+  color: #fbbf24;
+}
+
+.roleBadge.user {
+  background-color: rgba(37, 99, 235, 0.3);
+  color: #60a5fa;
+}
+
+.roleBadge.moderator {
+  background-color: rgba(147, 51, 234, 0.3);
+  color: #d8b4fe;
+}
+
+.statusBadge.active {
+  background-color: rgba(16, 185, 129, 0.3);
+  color: #6ee7b7;
+}
+
+.statusBadge.inactive {
+  background-color: rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+}
+
+.statusBadge.pending {
+  background-color: rgba(217, 119, 6, 0.3);
+  color: #fbbf24;
+}
+
+.badge.success {
+  background-color: rgba(16, 185, 129, 0.3);
+  color: #6ee7b7;
+}
+
+.badge.failure {
+  background-color: rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+}
+
+/* Action Buttons */
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  color: var(--color-text-muted, #9ca3af);
+}
+
+.iconButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.pageButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-border, #374151);
+  background-color: var(--color-surface, #1f2937);
+  color: var(--color-text, #f9fafb);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pageButton:hover:not(:disabled) {
+  background-color: var(--color-accent, #667eea);
+  color: #ffffff;
+  border-color: var(--color-accent, #667eea);
+}
+
+.pageButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Settings Grid */
+.settingsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.settingsCard {
+  background-color: var(--color-surface, #1f2937);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--color-border, #374151);
+}
+
+.settingsCard h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--color-text, #f9fafb);
+  font-size: 1.1rem;
+}
+
+.settingGroup {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--color-text, #f9fafb);
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.settingInput {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-border, #374151);
+  border-radius: 6px;
+  background-color: var(--color-input-bg, #111827);
+  color: var(--color-text, #f9fafb);
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+}
+
+.settingInput:focus {
+  outline: none;
+  border-color: var(--color-primary, #60a5fa);
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+}
+
+.checkbox {
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+  accent-color: var(--color-accent, #667eea);
+  margin-right: 0.5rem;
+}
+
+.code {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: var(--color-primary, #60a5fa);
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 0.85rem;
+}
+
+/* Settings Actions */
+.settingsActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  background-color: var(--color-surface, #1f2937);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--color-border, #374151);
+}
+
+.cancelButton {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-hover, #374151);
+  color: var(--color-text, #f9fafb);
+  border: 1px solid var(--color-border, #374151);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.cancelButton:hover {
+  background-color: var(--color-border, #4b5563);
+}
+
+.saveButton {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-accent, #667eea);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.saveButton:hover {
+  background-color: var(--color-accent-dark, #5568d3);
+  transform: translateY(-2px);
+}
+
+.saveButton:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .pageContainer {
+    padding: 1.5rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .settingsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: 1rem;
+  }
+
+  .pageTitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .pageSubtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .filterBar {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  .filterSelect,
+  .filterInput,
+  .searchInput {
+    width: 100%;
+    padding: 0.6rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .statCard {
+    padding: 1rem;
+  }
+
+  .statValue {
+    font-size: 1.5rem;
+  }
+
+  .recentActivitySection {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .activityTable {
+    font-size: 0.85rem;
+  }
+
+  .activityTable th,
+  .activityTable td {
+    padding: 0.5rem;
+  }
+
+  .usersTable {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .table {
+    font-size: 0.85rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.5rem;
+  }
+
+  .settingsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .settingsCard {
+    padding: 1rem;
+  }
+
+  .settingsActions {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .cancelButton,
+  .saveButton {
+    width: 100%;
+    padding: 0.6rem;
+  }
+
+  .pagination {
+    gap: 0.25rem;
+    flex-wrap: wrap;
+  }
+
+  .pageButton {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageContainer {
+    padding: 0.75rem;
+    min-height: calc(100vh - 45px);
+  }
+
+  .pageTitle {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .pageSubtitle {
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .filterBar {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .filterSelect,
+  .filterInput,
+  .searchInput {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .statCard {
+    padding: 0.75rem;
+  }
+
+  .statLabel {
+    font-size: 0.75rem;
+  }
+
+  .statValue {
+    font-size: 1.3rem;
+  }
+
+  .statChange {
+    font-size: 0.75rem;
+  }
+
+  .recentActivitySection {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+  }
+
+  .recentActivitySection h2 {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .activityTable {
+    font-size: 0.7rem;
+  }
+
+  .activityTable th,
+  .activityTable td {
+    padding: 0.35rem;
+  }
+
+  .usersTable {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+  }
+
+  .table {
+    font-size: 0.75rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.35rem;
+  }
+
+  .avatar {
+    width: 1.8rem;
+    height: 1.8rem;
+    font-size: 0.75rem;
+  }
+
+  .userInfo {
+    gap: 0.35rem;
+  }
+
+  .badge,
+  .roleBadge,
+  .statusBadge {
+    padding: 0.15rem 0.4rem;
+    font-size: 0.65rem;
+  }
+
+  .actions {
+    gap: 0.35rem;
+  }
+
+  .iconButton {
+    padding: 0.15rem 0.25rem;
+    font-size: 0.8rem;
+  }
+
+  .pagination {
+    gap: 0.15rem;
+    margin-top: 1rem;
+  }
+
+  .pageButton {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .settingsGrid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .settingsCard {
+    padding: 0.75rem;
+    border-radius: 6px;
+  }
+
+  .settingsCard h2 {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .settingGroup {
+    margin-bottom: 1rem;
+  }
+
+  .label {
+    font-size: 0.85rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .settingInput {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .checkbox {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .code {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.35rem;
+  }
+
+  .settingsActions {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+
+  .cancelButton,
+  .saveButton {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Large screens (1200px and above) */
+@media (min-width: 1200px) {
+  .pageContainer {
+    padding: 2.5rem;
+    max-width: 1600px;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .settingsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

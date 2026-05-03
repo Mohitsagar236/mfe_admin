@@ -1,0 +1,26 @@
+{
+  "name": "mfe_admin",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5002",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --port 5002 --host 0.0.0.0"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.14.2"
+  },
+  "devDependencies": {
+    "@originjs/vite-plugin-federation": "^1.4.1",
+    "@types/node": "^20.10.6",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^4.2.4",
+    "terser": "^5.46.2",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.10"
+  }
+}
